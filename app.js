@@ -30,30 +30,21 @@ headDropdown.addEventListener('change', () => {
     resultsDisplay();
 });
 
-function resultsDisplay() {
-    reportEl.textContent = `You have changed the head ${headChanges} times, ${middleChanges} times, and the ${bottomChanges} times`
-}
 
 
 middleDropdown.addEventListener('change', () => {
-    // get the value of the middle dropdown
-
-    // increment the middle change count state
-    
-    // update the dom for the middle (NOTE: use style.backgroundImage on the middleEl div instead of trying to set the .src -- it's NOT an img tag!)
-
-    // update the stats to show the new count (call displayStats() to do this work)
+    const middleSelection = middleDropdown.value;
+    middleChanges++;
+    middleEl.style.backgroundImage = `url(./assets/${middleSelection}-middle.png)`;
+    resultsDisplay();
 });
 
 
 bottomDropdown.addEventListener('change', () => {
-    // get the value of the bottom dropdown
-
-    // increment the bottom change count state
-    
-    // update the dom for the bottom (NOTE use style.backgroundImage on the bottomEl div instead of trying to set the .src -- it's NOT an img tag!)
-
-    // update the stats to show the new count (call displayStats() to do this work)
+    const bottomSelection = bottomDropdown.value;
+    bottomChanges++;
+    bottomEl.style.backgroundImage = `url(./assets/${bottomSelection}-pants.png)`;
+    resultsDisplay();
 });
 
 catchphraseButton.addEventListener('click', () => {
@@ -82,3 +73,8 @@ function displayCatchphrases() {
     
     // and append that HTML element to the cleared-out DOM
 }
+
+function resultsDisplay() {
+    reportEl.textContent = `You have changed the head ${headChanges} time(s), the middle ${middleChanges} time(s), and the bottom ${bottomChanges} time(s)`
+};
+
