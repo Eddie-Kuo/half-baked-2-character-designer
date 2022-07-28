@@ -65,13 +65,18 @@ function displayCatchphrases() {
     // clear out the DOM for the currently displayed catchphrases
     catchphrasesEl.textContent = '';
     // loop through each catchphrase in state
-    for (let catchphrase of characterCatchphrase) { //declaration of the loop
-        const catchphraseTag = document.createElement('p'); //events that will happen to every index added to the array
-        catchphrasesEl.textContent = catchphrase;
-        catchphrasesEl.append(catchphraseTag);
-        console.log(catchphrase);
-
+    // for (let catchphrase of characterCatchphrase) { //declaration of the loop
+    //     const catchphraseTag = document.createElement('p'); //events that will happen to every index added to the array
+    //     catchphrasesEl.textContent = catchphrase;
+    //     catchphrasesEl.append(catchphraseTag);
+    //     console.log(catchphrase);
+    for (let catchphrase of characterCatchphrase) {
+        const catchTag = document.createElement('p');
+        catchTag.textContent = catchphrase;
+        catchphrasesEl.append(catchTag);
     }
+
+}
     // and for each catchphrase
     
     // create an HTML element with the catchphrase as its text content
@@ -79,13 +84,13 @@ function displayCatchphrases() {
     // catchphrasesEl.textContent = catchphraseInput.value;
     // catchphrasesEl.append(catchphrase);
     // and append that HTML element to the cleared-out DOM
-}
+
 
 // function displayStats() {
     // text content of the reportEl to tell the user how many times they've changed each piece of the state
 // }
 
 function resultsDisplay() {
-    reportEl.textContent = `You have changed the head ${headChanges} time(s), the middle ${middleChanges} time(s), and the bottom ${bottomChanges} time(s)`
-};
+    reportEl.textContent = `You have changed the head ${headChanges} time(s), the middle ${middleChanges} time(s), and the bottom ${bottomChanges} time(s)`;
+}
 
