@@ -49,30 +49,41 @@ bottomDropdown.addEventListener('change', () => {
 
 catchphraseButton.addEventListener('click', () => {
     // get the value of the catchphrase input
-    
+    const catchphraseText = catchphraseInput.value; 
+
     // push the new catchphrase to the catchphrase array in state
-
+    characterCatchphrase.push(catchphraseText);
+    console.log(characterCatchphrase);
     // clear out the form input's value so it's empty to the user
-   
+    catchphraseInput.value = '';
     // update the dom to show the new catchphrases (refactor to/call displayCatchphrases to do this work)
-
+    displayCatchphrases();
 });
 
-function displayStats() {
-    // text content of the reportEl to tell the user how many times they've changed each piece of the state
-}
 
 function displayCatchphrases() {
     // clear out the DOM for the currently displayed catchphrases
-
+    catchphrasesEl.textContent = '';
     // loop through each catchphrase in state
-   
+    for (let catchphrase of characterCatchphrase) { //declaration of the loop
+        const catchphraseTag = document.createElement('p'); //events that will happen to every index added to the array
+        catchphrasesEl.textContent = catchphrase;
+        catchphrasesEl.append(catchphraseTag);
+        console.log(catchphrase);
+
+    }
     // and for each catchphrase
     
     // create an HTML element with the catchphrase as its text content
-    
+    // const catchphrase = document.createElement('p');
+    // catchphrasesEl.textContent = catchphraseInput.value;
+    // catchphrasesEl.append(catchphrase);
     // and append that HTML element to the cleared-out DOM
 }
+
+// function displayStats() {
+    // text content of the reportEl to tell the user how many times they've changed each piece of the state
+// }
 
 function resultsDisplay() {
     reportEl.textContent = `You have changed the head ${headChanges} time(s), the middle ${middleChanges} time(s), and the bottom ${bottomChanges} time(s)`
