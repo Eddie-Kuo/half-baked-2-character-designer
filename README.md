@@ -31,3 +31,14 @@ User [this repository](https://github.com/alchemycodelab/half-baked-web-01-chara
 | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --: |
 | IMPURE: `displayStats() : mutates the DOM to display a string describing the counts.` |   1 |
 | IMPURE: `displayCatchphrases() : clears out the old list from the DOM, loops through catchphrases, renders and appends to the list element`                                                                                                                                                          |   2 |
+
+<!-- Plan for Half Baked - features to work on/ fix -->
+<!-- 1. when selecting an item from the dropdown in the head category, a head picture displays on the side -->
+<!-- button element + event listener to change the images that are displayed -->
+<!-- 2. repeat for the middle and bottom by writing a function for all three -->
+
+<!-- 3. display how many times each feature was changed -->
+<!-- each button click should also change the sting with the values of each changing in the correct increments -->
+
+<!-- 4. when submitting a catchphrase, display all catchphrases that were entered -->
+<!-- the new thing we learned today on creating new p tags in JS to add items into an existing array then clearing the existing DOM element to display the new one with the new items added. -->
